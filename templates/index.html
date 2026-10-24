@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guard-X Multi-Device Pro | الحماية الذكية المباشرة</title>
+    <title>Guard-X Local Pro | Created by Bassem ElSokary (Boss)</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-gray-950 via-red-950 to-gray-900 text-gray-100 min-h-screen font-sans p-6">
@@ -15,7 +15,9 @@
                 <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-cyan-400">
                     Guard-X Direct Protection 🛡️
                 </h1>
-                <p class="text-gray-400 text-sm mt-1">نظام حماية يعتمد على الفحص المباشر لأجهزة ويندوز كل 5 ثوانٍ</p>
+                <p class="text-gray-400 text-sm mt-1">
+                    نظام حماية وتتبع أجهزة البلوتوث المباشر • <span class="text-cyan-400 font-semibold">Created by Bassem ElSokary (Boss)</span>
+                </p>
             </div>
             <div id="systemStatus" class="bg-gray-800 text-cyan-400 px-4 py-2 rounded-xl text-sm font-bold border border-cyan-500/30">
                 ⚪ النظام متوقف
@@ -25,7 +27,7 @@
         <!-- شبكة المحتوى -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
-            <!-- العمود الأيمن: إدارة الأجهزة والإضافة -->
+            <!-- العمود الأيمن: إضافة الأجهزة والتحكم -->
             <div class="lg:col-span-1 space-y-6">
                 <div class="bg-gray-900/80 backdrop-blur-md p-6 rounded-2xl border border-gray-800 shadow-xl">
                     <h3 class="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
@@ -65,7 +67,7 @@
                 </div>
             </div>
 
-            <!-- العمود الأيسر: لوحات المراقبة والإنذار -->
+            <!-- العمود الأيسر: جدول المراقبة والإنذار -->
             <div class="lg:col-span-2 space-y-6">
                 
                 <!-- صندوق الإنذار الطارئ -->
@@ -76,7 +78,7 @@
                     </button>
                 </div>
 
-                <!-- 🔥 الجدول الأساسي: مراقبة الأجهزة المضافة كل 5 ثوانٍ 🔥 -->
+                <!-- جدول المراقبة الحية كل 5 ثوانٍ -->
                 <div class="bg-gray-900/80 backdrop-blur-md p-6 rounded-2xl border border-red-900/50 shadow-xl">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-bold text-red-400 flex items-center gap-2">
@@ -106,7 +108,7 @@
                     </div>
                 </div>
 
-                <!-- جدول أجهزة البلوتوث المتاحة في ويندوز للاختيار منها -->
+                <!-- جدول أجهزة البلوتوث المتاحة في ويندوز -->
                 <div class="bg-gray-900/80 backdrop-blur-md p-6 rounded-2xl border border-gray-800 shadow-xl">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-bold text-cyan-400 flex items-center gap-2">
@@ -138,9 +140,17 @@
 
             </div>
         </div>
+
+        <!-- الفوتر: التوقيع الشخصي -->
+        <footer class="mt-12 text-center py-6 border-t border-gray-800/80 text-gray-400 text-sm">
+            <p class="font-medium tracking-wide">
+                Created & Designed with ❤️ by <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-red-400 font-extrabold text-base">Bassem ElSokary (Boss)</span>
+            </p>
+            <p class="text-xs text-gray-600 mt-1">© Guard-X Multi-Device Pro • Local Security Architecture</p>
+        </footer>
     </div>
 
-    <!-- كود الجافاسكريبت للتحكم والـ 5 ثواني والإنذار الصوتي -->
+    <!-- كود التحكم بالـ JavaScript -->
     <script>
         let monitoredDevices = [];
         let monitorInterval = null;
@@ -282,7 +292,6 @@
                     let cleanTrackedAddr = tracked.address.replace(/[:\-]/g, '').toUpperCase();
                     let cleanTrackedName = tracked.name.toLowerCase();
 
-                    // التحقق هل الجهاز موجود في ويندوز حالياً وبحالة OK
                     let isPresent = activeWindowsDevices.some(winDev => {
                         let cleanWinAddr = winDev.address.replace(/[:\-]/g, '').toUpperCase();
                         let cleanWinName = winDev.name.toLowerCase();
@@ -315,7 +324,6 @@
                 if (deviceMissing) {
                     triggerSiren(missingName);
                 } else {
-                    // لو كل الأجهزة رجعت تانية آمنة، نخفي البانر ونوقف السارينة تلقائياً
                     document.getElementById('sirenAlertBanner').classList.add('hidden');
                 }
 
