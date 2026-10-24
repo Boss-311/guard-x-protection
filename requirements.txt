@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+bleak
+jinja2
+websockets
+fastapi
